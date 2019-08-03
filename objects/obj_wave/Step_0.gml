@@ -3,3 +3,4 @@
 //with (obj_player) {
 	//other.x = x;
 //}
+y-=0.5

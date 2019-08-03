@@ -40,6 +40,7 @@ if global.gas > 0 {
 else {
 	speed = 0;
 	sprite_index = spr_bulletDone;
+	slowmotion = false;
 	global.gas = 0;
 }
 
