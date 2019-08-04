@@ -30,7 +30,14 @@ else if hmove > 0 {
 	}
 }
 //Down
+cx = camera_get_view_x(view_camera[0]);
+cy = camera_get_view_y(view_camera[0]);
+ch = camera_get_view_height(view_camera[0]);
+
 if vmove < 0 {
+	if y >= (cy + (ch)/8) {
+		camera_set_view_pos(view_camera[0], cx, cy+speedm);
+	}
 	if place_free(x, y+speedm) {
 		y += speedm
 	}
@@ -41,6 +48,9 @@ if vmove < 0 {
 	}
 }
 else if vmove > 0 {
+	if y <= (cy + (ch*7)/8) {
+		camera_set_view_pos(view_camera[0], cx, cy-speedm);
+	}
 	if place_free(x, y-speedm) {
 		y -= speedm
 	} else {
