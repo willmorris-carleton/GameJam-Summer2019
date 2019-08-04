@@ -8,6 +8,12 @@ if instance_exists(obj_wave) {
 			}
 			alarm[0] = room_speed/4;
 			kill = true;
+			audio_play_sound(snd_death, 10, false);
+		}
+		if instance_exists(obj_playerBarrel) {
+			with obj_playerBarrel {
+				instance_destroy();
+			}
 		}
 	}
 }

@@ -61,8 +61,9 @@ else if vmove > 0 {
 }
 
 //Spawn Bullet
-if mouse_check_button_pressed(mb_left) and hasBullet{
-	hasBullet = false;
+if mouse_check_button_pressed(mb_left) and global.hasBullet{
+	global.hasBullet = false;
+	audio_play_sound(snd_Shot, 11, false);
 	fire_direction = point_direction(x, y, mouse_x, mouse_y);
 	var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
 	

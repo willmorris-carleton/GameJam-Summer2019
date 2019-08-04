@@ -11,7 +11,7 @@ if !colChosen {
 	colChosen = true;
 }
 
-if room != rm_start {
+if room != rm_start and room != rm_end{
 	bx = 385;
 	by = 32;
 	bw = cw - 2*bx;
@@ -21,7 +21,7 @@ if room != rm_start {
 	draw_rectangle_colour(cx + bx, cy + by, (cx + bx)+ bw*(global.gas/100), cy + by + bh, col, col, col, col, false);
 }
 
-else {
+else if room != rm_end{
 	draw_set_font(fnt_title);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);

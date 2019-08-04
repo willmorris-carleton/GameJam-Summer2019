@@ -29,7 +29,7 @@ if global.gas > 0 {
 		image_speed = 0.25;
 		mouse_angle = point_direction(x, y, mouse_x, mouse_y); 
 		dd = angle_difference(direction, mouse_angle);
-		direction -= min(abs(dd), 2) * sign(dd);
+		direction -= min(abs(dd), 3) * sign(dd);
 	}
 	else {
 		image_speed = 1;

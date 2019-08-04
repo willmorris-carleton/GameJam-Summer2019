@@ -9,7 +9,10 @@ if instance_exists(obj_player) {
 		other.playery = y;
 	}
 	//If can see player
-	if !collision_line(x,y,playerx, playery, obj_wall, false, false) {
+	if !collision_line(x,y,playerx, playery, obj_wall, false, false) and !collision_line(x,y,playerx, playery, obj_opaqueWall, false, false){
+		if !alert {
+			audio_play_sound(snd_alert, 12, false)
+		}
 		alert = true;
 		alerttime = current_time;
 		sprite_index = spr_enemyAlert;

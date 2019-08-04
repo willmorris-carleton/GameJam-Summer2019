@@ -3,6 +3,7 @@
 
 if global.gas <= 0 {
 	global.gas = 100;
-	hasBullet = true;
+	global.hasBullet = true;
 	instance_destroy(obj_bullet);
+	audio_play_sound(snd_reload, 10, false);
 }
